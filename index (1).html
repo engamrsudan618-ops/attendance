@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حضور المحاضرات – كلية الهندسة الزراعية</title>
+<meta name="description" content="نظام حضور المحاضرات بكود شخصي لكل طالب وتحقق بالموقع وربط بالجهاز.">
+<meta name="theme-color" content="#0f3d2e">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f7f4;--sf:#ffffff;--tx:#10281f;--mu:#586f66;--ln:#d6e2db;--dk:#0f3d2e;--ac:#1f7a4d;--gd:#e3b23c;--hero:#0f3d2e;--ht:#eaf5ee;--bad:#b3362b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1713;--sf:#13241d;--tx:#e6f1ec;--mu:#97b0a6;--ln:#26403a;--dk:#0a2a20;--ac:#4fc08a;--hero:#0a2a20}}
+:root[data-theme="dark"]{--bg:#0c1713;--sf:#13241d;--tx:#e6f1ec;--mu:#97b0a6;--ln:#26403a;--dk:#0a2a20;--ac:#4fc08a;--hero:#0a2a20}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 17px/1.8 Tajawal,Tahoma,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--dk);color:#fff}
+header::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--dk);z-index:11}
+.nav{display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+.logo{width:34px;height:34px;border-radius:9px;background:var(--gd);color:var(--dk);display:grid;place-items:center;font-size:20px;font-weight:800}
+.nav nav{margin-inline-start:auto;display:flex;gap:20px;font-size:15px}.nav nav a{opacity:.85}.nav nav a:hover{opacity:1}
+.btn{display:inline-block;border:0;border-radius:12px;padding:12px 22px;font:800 16px Tajawal,Tahoma,sans-serif;cursor:pointer;min-height:46px}
+.b1{background:var(--gd);color:#1b1500}.b2{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}.b3{background:var(--ac);color:#fff}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--gd);outline-offset:3px}
+.hero{background:var(--hero);color:#fff;padding:54px 0 64px;overflow:hidden}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.tag{display:inline-block;background:rgba(255,255,255,.12);border-radius:99px;padding:3px 14px;font-size:14px;margin-bottom:14px}
+h1{font-size:clamp(30px,5.4vw,50px);line-height:1.3;margin:0 0 14px;font-weight:800}h1 em{font-style:normal;color:var(--gd)}
+.hero p{color:#cfe3d9;font-size:18px;margin:0 0 24px;max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.phone{width:240px;margin:0 auto;background:#0a1f17;border:7px solid #1d3b30;border-radius:34px;padding:10px;box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.scr{background:#f3f7f4;color:#10281f;border-radius:24px;overflow:hidden;font-size:13px;line-height:1.6}
+.sb{background:#1f7a4d;color:#fff;padding:10px 12px;font-weight:800}
+.sc{padding:12px}.sc b{display:block;font-size:15px;margin-bottom:2px}
+.fk{background:#fff;border:1px solid #d6e2db;border-radius:10px;padding:10px;text-align:center;font:800 24px monospace;letter-spacing:5px;direction:ltr;margin:10px 0}
+.fb{background:#1f7a4d;color:#fff;border-radius:10px;padding:8px;text-align:center;font-weight:800}
+.fo{background:#e3f2ea;color:#1f7a4d;border-radius:10px;padding:8px;margin-top:10px;font-weight:700}
+section{padding:56px 0}section h2{font-size:clamp(24px,3.6vw,32px);margin:0 0 8px;font-weight:800}
+.lead{color:var(--mu);margin:0 0 28px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:20px}
+.card .i{width:44px;height:44px;border-radius:12px;background:var(--ht);display:grid;place-items:center;font-size:22px;margin-bottom:10px}
+.card h3{margin:0 0 4px;font-size:18px}.card p{margin:0;color:var(--mu);font-size:15.5px;line-height:1.7}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.steps{counter-reset:s;list-style:none;margin:10px 0 0;padding:0}
+.steps li{counter-increment:s;position:relative;padding:6px 44px 6px 0;margin-bottom:6px}
+.steps li::before{content:counter(s);position:absolute;right:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px}
+.alt{background:var(--sf);border-block:1px solid var(--ln)}
+.rows{border:1px solid var(--ln);border-radius:16px;overflow:hidden;background:var(--bg)}
+.row{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;padding:13px 18px;border-top:1px solid var(--ln)}.row:first-child{border-top:0}
+.row b{color:var(--bad)}.row span{color:var(--tx)}
+.note{margin-top:16px;background:var(--ht);border-radius:12px;padding:12px 16px;color:var(--tx);font-size:15.5px}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800;padding:12px 0;list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:left;color:var(--ac);font-size:22px;line-height:1}details[open] summary::after{content:"−"}
+details p{margin:0 0 12px;color:var(--mu);font-size:16px}
+.band{background:var(--hero);color:#fff;text-align:center;padding:48px 18px;border-radius:22px}
+.band h2{color:#fff}.band p{color:#cfe3d9;margin:0 auto 20px;max-width:520px}
+footer{padding:30px 0 40px;color:var(--mu);font-size:15px;text-align:center}footer a{color:var(--ac);font-weight:500}
+@media (max-width:820px){.hg{grid-template-columns:1fr}.phone{order:-1;width:215px}.two{grid-template-columns:1fr}.nav nav{display:none}.nav .btn{margin-inline-start:auto}.row{grid-template-columns:1fr}.hero{padding-top:34px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#top"><span class="logo">✓</span>حضور المحاضرات</a>
+<nav><a href="#features">المميزات</a><a href="#how">كيف يعمل</a><a href="#security">الأمان</a><a href="#faq">الأسئلة</a></nav>
+<a class="btn b1" data-app href="#">دخول التطبيق</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hg">
+<div>
+<span class="tag">كلية الهندسة الزراعية · جامعة كفر الشيخ</span>
+<h1>تسجيل حضور المحاضرات <em>بدون غش</em></h1>
+<p>لكل طالب كود شخصي في كل محاضرة، وحساب مربوط بجهازه، وتحقق من وجوده في القاعة. يعمل من المتصفح ويُثبَّت كتطبيق على أندرويد وآيفون.</p>
+<div class="cta"><a class="btn b1" data-app href="#">دخول التطبيق</a><a class="btn b2" href="#how">كيف يعمل؟</a></div>
+</div>
+<div class="phone" aria-hidden="true"><div class="scr">
+<div class="sb">حضور المحاضرات</div>
+<div class="sc"><b>أهلاً يوسف</b><span>اكتب كودك الشخصي لهذه المحاضرة</span>
+<div class="fk">7F3A9C</div><div class="fb">تسجيل الحضور</div>
+<div class="fo">تم تسجيل حضورك ✓</div></div>
+</div></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+<h2>كل ما تحتاجه لحضور موثوق</h2><p class="lead">طبقات حماية تعمل معًا، والتحقق كله على السيرفر فلا يمكن للطالب تعديل النتيجة من متصفحه.</p>
+<div class="grid">
+<div class="card"><div class="i">🔑</div><h3>كود شخصي لكل محاضرة</h3><p>يتولّد كود مختلف لكل طالب مع كل محاضرة، ويراه الدكتور فقط. لا يصلح لغير صاحبه.</p></div>
+<div class="card"><div class="i">📱</div><h3>حساب مربوط بجهاز واحد</h3><p>يُفعَّل الحساب مرة واحدة بكود تفعيل، وأي جهاز آخر يُرفض.</p></div>
+<div class="card"><div class="i">📍</div><h3>تحقق بالموقع (GPS)</h3><p>يُحسب البُعد عن القاعة على السيرفر ويعمل مع بيانات الموبايل. الموقع لا يُخزَّن.</p></div>
+<div class="card"><div class="i">⏱️</div><h3>نافذة زمنية</h3><p>يُقبل التسجيل خلال مدة يحددها الدكتور، ثم يُغلق تلقائيًا.</p></div>
+<div class="card"><div class="i">📊</div><h3>تقارير وتنبيهات حرمان</h3><p>نسبة الحضور لكل طالب في كل مادة، وتنزيل CSV، وتنبيه عند الانخفاض.</p></div>
+<div class="card"><div class="i">📲</div><h3>تطبيق قابل للتثبيت</h3><p>أيقونة على الشاشة الرئيسية وملء الشاشة. وإن انقطع الإنترنت لحظة التسجيل يُحفظ كودك ويُرسل لاحقًا.</p></div>
+</div></div></section>
+
+<section id="how" class="alt"><div class="wrap">
+<h2>كيف يعمل؟</h2><p class="lead">خطوات بسيطة للدكتور وللطالب.</p>
+<div class="two">
+<div class="card"><h3>للدكتور</h3><ol class="steps">
+<li>يسجّل الدخول بحساب الدكتور ويفتح المحاضرة داخل القاعة.</li>
+<li>تظهر له أكواد جديدة لكل طالب، ويوزّعها بالنداء أو بقصاصات مطبوعة.</li>
+<li>يتابع الحضور والتنبيهات لحظيًا.</li>
+<li>يقفل الحضور ويراجع التقرير.</li></ol></div>
+<div class="card"><h3>للطالب</h3><ol class="steps">
+<li>ينشئ حسابه ويفعّله مرة واحدة بكود التفعيل.</li>
+<li>يكتب كوده الشخصي في المحاضرة.</li>
+<li>يسمح بالموقع فيُسجَّل حضوره، ويتابع نسبته من «حضوري».</li></ol></div>
+</div></div></section>
+
+<section id="security"><div class="wrap">
+<h2>حماية متعددة الطبقات</h2><p class="lead">ماذا يحدث عند كل محاولة تحايل؟</p>
+<div class="rows">
+<div class="row"><b>تسجيل لزميل غائب</b><span>الكود شخصي ومربوط بحساب وجهاز صاحبه.</span></div>
+<div class="row"><b>إرسال الكود لزميل</b><span>يُرفض وتظهر للدكتور تنبيه باسم صاحب الكود.</span></div>
+<div class="row"><b>التسجيل من خارج القاعة</b><span>فحص الموقع على السيرفر يرفض من خارج النطاق.</span></div>
+<div class="row"><b>تخمين الأكواد</b><span>قفل الحساب بعد عدة محاولات خاطئة.</span></div>
+<div class="row"><b>التسجيل بعد انتهاء الوقت</b><span>تُرفض الأكواد بعد انتهاء النافذة أو قفل الحضور.</span></div>
+</div>
+<p class="note"><b>بصراحة:</b> لا يوجد نظام برمجي يمنع التحايل 100%. تزييف الموقع أو إعارة موبايل مفعّل ممكنان لطالب متمرس، ولذلك يُنصح بمراقبة خفيفة في القاعة ومراجعة التنبيهات بعد كل محاضرة.</p>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap">
+<h2>أسئلة شائعة</h2><p class="lead">إجابات سريعة قبل البدء.</p>
+<details><summary>هل أحتاج لتحميل تطبيق من المتجر؟</summary><p>لا. افتح الرابط من المتصفح، ثم ثبّته على الشاشة الرئيسية: «تثبيت» في Chrome على أندرويد، أو «إضافة إلى الشاشة الرئيسية» في Safari على آيفون.</p></details>
+<details><summary>هل يُخزَّن موقعي؟</summary><p>لا. يُستخدم موقعك لحظة التسجيل لحساب المسافة فقط. إن رُفض تسجيلك لبُعدك تُحفظ المسافة التقريبية في سجل التنبيهات.</p></details>
+<details><summary>غيّرت موبايلي، ماذا أفعل؟</summary><p>اطلب من الدكتور «فك ربط الجهاز»، ثم فعّل حسابك من جهازك الجديد بنفس كود التفعيل.</p></details>
+<details><summary>ماذا لو انقطع الإنترنت وقت التسجيل؟</summary><p>يُحفظ كودك وموقعك على جهازك ويُرسل تلقائيًا عند عودة الاتصال. يقبله النظام فقط إن وصل قبل انتهاء مدة التسجيل.</p></details>
+<details><summary>هل الخدمة مجانية؟</summary><p>يعتمد النظام على باقات مجانية لخدمات الاستضافة وقاعدة البيانات تكفي شعبة دراسية. راجع شروط الباقات الحالية عند التشغيل.</p></details>
+</div></section>
+
+<section><div class="wrap"><div class="band">
+<h2>جاهز لتسجيل حضور موثوق؟</h2><p>ادخل بحساب الطالب أو الدكتور وابدأ من أول محاضرة.</p>
+<a class="btn b1" data-app href="#">دخول التطبيق</a></div></div></section>
+</main>
+
+<footer><div class="wrap">كلية الهندسة الزراعية – جامعة كفر الشيخ · <a data-priv href="#">سياسة الخصوصية</a></div></footer>
+
+<script>
+const LINKS={app:"app.html",priv:"app.html#privacy"};
+document.querySelectorAll("[data-app]").forEach(a=>a.href=LINKS.app);
+document.querySelectorAll("[data-priv]").forEach(a=>a.href=LINKS.priv);
+</script>
+</body>
+</html>
